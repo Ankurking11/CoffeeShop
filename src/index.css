@@ -25,11 +25,27 @@ html {
 body {
   margin: 0;
   background: var(--background);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.45), rgba(250, 249, 246, 0.9));
   color: var(--foreground);
   font-family: 'Inter', sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+a,
+button {
+  transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+input,
+textarea {
+  font-family: 'Inter', sans-serif;
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25);
 }
 
 ::-webkit-scrollbar {
@@ -59,15 +75,6 @@ body {
   }
 }
 
-@keyframes rotateDrink {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
-}
-
 @keyframes scrollLeft {
   from {
     transform: translateX(0);
@@ -84,8 +91,10 @@ body {
   animation: scrollLeft var(--carousel-duration) linear infinite;
 }
 
-.rotate-drink {
-  animation: rotateDrink 12s linear infinite;
-  transform-style: preserve-3d;
-  will-change: transform;
+.paper-lines {
+  background-image:
+    linear-gradient(to right, rgba(211, 204, 193, 0.2) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(211, 204, 193, 0.12) 1px, transparent 1px);
+  background-size: 120px 120px;
 }
+

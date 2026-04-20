@@ -2,11 +2,15 @@ import { useEffect, useState } from 'react'
 import { motion as Motion } from 'framer-motion'
 import {
   Award,
+  AtSign,
   Coffee,
   Crown,
   Leaf,
   Lock,
+  Mail,
+  MapPin,
   Menu,
+  Phone,
   Sparkles,
   TimerReset,
   Truck,
@@ -130,6 +134,7 @@ function App() {
             <a href="#why" className="hover:text-primary">Why Brewtopia</a>
             <a href="#delivery" className="hover:text-primary">Delivery</a>
             <a href="#loyalty" className="hover:text-primary">Loyalty</a>
+            <a href="#contact" className="hover:text-primary">Contact</a>
           </nav>
           <button className="rounded-full border border-border p-2 text-foreground md:hidden" aria-label="Open navigation">
             <Menu size={18} />
@@ -137,8 +142,8 @@ function App() {
         </div>
       </header>
 
-      <main id="top" className="mx-auto flex w-full max-w-7xl flex-col gap-20 px-5 pb-32 pt-28 md:gap-28 md:px-10 md:pt-36">
-        <section className="grid items-center gap-12 md:grid-cols-2">
+      <main id="top" className="paper-lines mx-auto flex w-full max-w-7xl flex-col gap-20 px-5 pb-36 pt-28 md:gap-28 md:px-10 md:pt-36">
+        <section className="grid items-center gap-12 border-b border-border pb-16 md:grid-cols-2">
           <div className="space-y-8">
             <p className="font-body text-sm uppercase tracking-[0.3em] text-muted">Signature Coffee & Shakes</p>
             <h1 className="font-heading text-[clamp(2.6rem,8vw,6.6rem)] font-black uppercase leading-[0.86] tracking-[-0.03em]">
@@ -157,6 +162,20 @@ function App() {
               <a href="#subscription" className="rounded-full border border-border px-7 py-3 text-sm font-semibold uppercase tracking-[0.18em] transition hover:border-foreground/40">
                 Join Brew Pass
               </a>
+            </div>
+            <div className="grid max-w-xl grid-cols-3 gap-3 pt-2">
+              <div className="rounded-xl border border-border bg-white/60 p-3 text-center">
+                <p className="font-heading text-xl font-black uppercase">6</p>
+                <p className="text-xs uppercase tracking-[0.08em] text-muted">Core SKUs</p>
+              </div>
+              <div className="rounded-xl border border-border bg-white/60 p-3 text-center">
+                <p className="font-heading text-xl font-black uppercase">18M</p>
+                <p className="text-xs uppercase tracking-[0.08em] text-muted">Delivery SLA</p>
+              </div>
+              <div className="rounded-xl border border-border bg-white/60 p-3 text-center">
+                <p className="font-heading text-xl font-black uppercase">4.9</p>
+                <p className="text-xs uppercase tracking-[0.08em] text-muted">Member Score</p>
+              </div>
             </div>
           </div>
 
@@ -183,7 +202,7 @@ function App() {
           </Motion.div>
         </section>
 
-        <section id="menu" className="space-y-8">
+        <section id="menu" className="space-y-8 border-b border-border pb-16">
           <div className="flex items-end justify-between gap-6">
             <div>
               <p className="text-sm uppercase tracking-[0.25em] text-muted">Product Showcase</p>
@@ -213,7 +232,7 @@ function App() {
                     <img
                       src={drink.image}
                       alt={drink.name}
-                      className="rotate-drink h-[260px] w-[200px] object-contain transition-all duration-300 [filter:drop-shadow(0px_18px_28px_rgba(0,0,0,0.18))] group-hover:[filter:drop-shadow(0px_26px_34px_rgba(0,0,0,0.24))]"
+                      className="h-[260px] w-[200px] object-contain transition-all duration-300 [filter:drop-shadow(0px_18px_28px_rgba(0,0,0,0.18))] group-hover:[filter:drop-shadow(0px_26px_34px_rgba(0,0,0,0.24))]"
                     />
                   </div>
                   <h3 className="mt-3 font-heading text-base font-black uppercase tracking-[0.08em]">{drink.name}</h3>
@@ -227,7 +246,7 @@ function App() {
           </div>
         </section>
 
-        <section id="why" className="space-y-8">
+        <section id="why" className="space-y-8 border-b border-border pb-16">
           <div>
             <p className="text-sm uppercase tracking-[0.25em] text-muted">Why We Hit Different</p>
             <h2 className="mt-3 font-heading text-4xl font-black uppercase tracking-tight md:text-5xl">Built Like a Product Team</h2>
@@ -252,7 +271,7 @@ function App() {
           </div>
         </section>
 
-        <section id="subscription" className="space-y-8">
+        <section id="subscription" className="space-y-8 border-b border-border pb-16">
           <div>
             <p className="text-sm uppercase tracking-[0.25em] text-muted">Subscription</p>
             <h2 className="mt-3 font-heading text-4xl font-black uppercase tracking-tight md:text-5xl">Choose Your Brew Pass</h2>
@@ -304,7 +323,7 @@ function App() {
           </div>
         </section>
 
-        <section id="loyalty" className="space-y-8">
+        <section id="loyalty" className="space-y-8 border-b border-border pb-16">
           <div>
             <p className="text-sm uppercase tracking-[0.25em] text-muted">Loyalty</p>
             <h2 className="mt-3 font-heading text-4xl font-black uppercase tracking-tight md:text-5xl">Unlock The Brew Ladder</h2>
@@ -329,6 +348,76 @@ function App() {
             ))}
           </div>
         </section>
+
+        <section id="contact" className="overflow-hidden rounded-[2rem] border border-foreground/15 bg-foreground px-6 py-10 text-background md:px-10 md:py-14">
+          <div className="grid gap-12 md:grid-cols-[1.2fr_1fr]">
+            <div>
+              <p className="text-sm uppercase tracking-[0.24em] text-background/70">Contact Brewtopia</p>
+              <h2 className="mt-4 font-heading text-[clamp(2rem,5vw,4rem)] font-black uppercase leading-[0.9]">
+                Let&apos;s Build
+                <br />
+                Your Drink Ritual.
+              </h2>
+              <p className="mt-5 max-w-xl text-background/75">
+                Brand events, catering drops, or private office subscriptions. Reach out and we
+                will design a custom coffee and shake program for your team.
+              </p>
+              <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                <a href="tel:+18002739867" className="flex items-center gap-3 rounded-xl border border-background/20 bg-background/5 px-4 py-3 transition hover:bg-background/10">
+                  <Phone size={18} />
+                  <span>+1 (800) BREW-TOP</span>
+                </a>
+                <a href="mailto:hello@brewtopia.com" className="flex items-center gap-3 rounded-xl border border-background/20 bg-background/5 px-4 py-3 transition hover:bg-background/10">
+                  <Mail size={18} />
+                  <span>hello@brewtopia.com</span>
+                </a>
+                <div className="flex items-center gap-3 rounded-xl border border-background/20 bg-background/5 px-4 py-3 sm:col-span-2">
+                  <MapPin size={18} />
+                  <span>Flagship: 280 Roast Avenue, New York</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-background/20 bg-background/5 p-6">
+              <p className="text-xs uppercase tracking-[0.2em] text-background/65">Quick Message</p>
+              <form className="mt-5 space-y-3">
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  className="w-full rounded-xl border border-background/20 bg-background/10 px-4 py-3 text-sm text-background placeholder:text-background/50 focus:outline-none"
+                />
+                <input
+                  type="email"
+                  placeholder="Work email"
+                  className="w-full rounded-xl border border-background/20 bg-background/10 px-4 py-3 text-sm text-background placeholder:text-background/50 focus:outline-none"
+                />
+                <textarea
+                  rows="4"
+                  placeholder="Tell us what you need"
+                  className="w-full rounded-xl border border-background/20 bg-background/10 px-4 py-3 text-sm text-background placeholder:text-background/50 focus:outline-none"
+                />
+                <button
+                  type="button"
+                  className="w-full rounded-full bg-background px-5 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-foreground transition hover:opacity-90"
+                >
+                  Send Request
+                </button>
+              </form>
+              <div className="mt-6 flex items-center justify-between border-t border-background/20 pt-4 text-sm text-background/80">
+                <span>Follow</span>
+                <a href="#" className="inline-flex items-center gap-2 hover:text-background">
+                  <AtSign size={16} />
+                  @brewtopia
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer className="flex flex-col items-start justify-between gap-4 border-t border-border pt-6 text-sm text-muted md:flex-row md:items-center">
+          <p className="font-heading text-base font-black uppercase tracking-[0.08em] text-foreground">Brewtopia</p>
+          <p>Designed for people who treat drinks like products.</p>
+        </footer>
       </main>
 
       <Motion.div
