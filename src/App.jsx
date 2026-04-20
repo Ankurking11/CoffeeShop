@@ -121,7 +121,7 @@ function App() {
       <header
         className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
           isScrolled
-            ? 'border-border/90 bg-background/80 py-3 backdrop-blur-md'
+            ? 'border-border/90 bg-background/86 py-3 backdrop-blur-md'
             : 'border-transparent bg-transparent py-5'
         }`}
       >
@@ -145,7 +145,7 @@ function App() {
       <main id="top" className="paper-lines mx-auto flex w-full max-w-7xl flex-col gap-20 px-5 pb-36 pt-28 md:gap-28 md:px-10 md:pt-36">
         <section className="grid items-center gap-12 border-b border-border pb-16 md:grid-cols-2">
           <div className="space-y-8">
-            <p className="font-body text-sm uppercase tracking-[0.3em] text-muted">Signature Coffee & Shakes</p>
+            <p className="kicker">Signature Coffee & Shakes</p>
             <h1 className="font-heading text-[clamp(2.6rem,8vw,6.6rem)] font-black uppercase leading-[0.86] tracking-[-0.03em]">
               MORE THAN COFFEE.
               <br />
@@ -154,6 +154,9 @@ function App() {
             <p className="max-w-xl text-lg text-muted">
               Brewtopia builds premium drinks like product launches: engineered texture,
               dramatic flavor, and instantly recognizable silhouettes.
+            </p>
+            <p className="inline-flex rounded-full border border-border bg-white/60 px-4 py-1 text-xs uppercase tracking-[0.14em] text-muted">
+              Roasted daily. Hand-finished every cup.
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <a href="#menu" className="rounded-full bg-foreground px-7 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-background transition hover:opacity-90">
@@ -164,15 +167,15 @@ function App() {
               </a>
             </div>
             <div className="grid max-w-xl grid-cols-3 gap-3 pt-2">
-              <div className="rounded-xl border border-border bg-white/60 p-3 text-center">
+              <div className="cafe-surface rounded-xl p-3 text-center">
                 <p className="font-heading text-xl font-black uppercase">6</p>
                 <p className="text-xs uppercase tracking-[0.08em] text-muted">Core SKUs</p>
               </div>
-              <div className="rounded-xl border border-border bg-white/60 p-3 text-center">
+              <div className="cafe-surface rounded-xl p-3 text-center">
                 <p className="font-heading text-xl font-black uppercase">18M</p>
                 <p className="text-xs uppercase tracking-[0.08em] text-muted">Delivery SLA</p>
               </div>
-              <div className="rounded-xl border border-border bg-white/60 p-3 text-center">
+              <div className="cafe-surface rounded-xl p-3 text-center">
                 <p className="font-heading text-xl font-black uppercase">4.9</p>
                 <p className="text-xs uppercase tracking-[0.08em] text-muted">Member Score</p>
               </div>
@@ -205,7 +208,7 @@ function App() {
         <section id="menu" className="space-y-8 border-b border-border pb-16">
           <div className="flex items-end justify-between gap-6">
             <div>
-              <p className="text-sm uppercase tracking-[0.25em] text-muted">Product Showcase</p>
+              <p className="kicker">Product Showcase</p>
               <h2 className="mt-3 font-heading text-4xl font-black uppercase tracking-tight md:text-5xl">Signature Lineup</h2>
             </div>
             <p className="hidden max-w-sm text-right text-sm text-muted md:block">
@@ -248,7 +251,7 @@ function App() {
 
         <section id="why" className="space-y-8 border-b border-border pb-16">
           <div>
-            <p className="text-sm uppercase tracking-[0.25em] text-muted">Why We Hit Different</p>
+            <p className="kicker">Why We Hit Different</p>
             <h2 className="mt-3 font-heading text-4xl font-black uppercase tracking-tight md:text-5xl">Built Like a Product Team</h2>
           </div>
 
@@ -260,7 +263,7 @@ function App() {
                   key={pillar.title}
                   whileHover={{ y: -6 }}
                   transition={{ duration: 0.2 }}
-                  className="rounded-2xl border border-border bg-white/40 p-6 transition-colors hover:border-primary/55"
+                  className="cafe-surface rounded-2xl p-6 transition-colors hover:border-primary/55"
                 >
                   <Icon className="text-primary" size={24} />
                   <h3 className="mt-4 font-heading text-lg font-black uppercase tracking-[0.07em]">{pillar.title}</h3>
@@ -273,12 +276,12 @@ function App() {
 
         <section id="subscription" className="space-y-8 border-b border-border pb-16">
           <div>
-            <p className="text-sm uppercase tracking-[0.25em] text-muted">Subscription</p>
+            <p className="kicker">Subscription</p>
             <h2 className="mt-3 font-heading text-4xl font-black uppercase tracking-tight md:text-5xl">Choose Your Brew Pass</h2>
           </div>
 
           <div className="grid gap-5 lg:grid-cols-2">
-            <article className="rounded-3xl border border-border bg-white/60 p-7">
+            <article className="cafe-surface rounded-3xl p-7">
               <h3 className="font-heading text-2xl font-black uppercase tracking-[0.07em]">Starter</h3>
               <p className="mt-3 text-muted">3 premium drinks weekly + surprise seasonal upgrade.</p>
               <p className="mt-7 font-heading text-4xl font-black uppercase">$29/mo</p>
@@ -293,9 +296,9 @@ function App() {
           </div>
         </section>
 
-        <section id="delivery" className="grid items-center gap-8 rounded-3xl border border-border bg-white/45 p-8 md:grid-cols-2">
+        <section id="delivery" className="cafe-surface grid items-center gap-8 rounded-3xl p-8 md:grid-cols-2">
           <div>
-            <p className="text-sm uppercase tracking-[0.25em] text-muted">Delivery</p>
+            <p className="kicker">Delivery</p>
             <h2 className="mt-3 font-heading text-4xl font-black uppercase tracking-tight">At Your Door in 18</h2>
             <p className="mt-4 max-w-md text-muted">
               We dispatch from micro-hubs so temperature and foam texture survive transit.
@@ -325,7 +328,7 @@ function App() {
 
         <section id="loyalty" className="space-y-8 border-b border-border pb-16">
           <div>
-            <p className="text-sm uppercase tracking-[0.25em] text-muted">Loyalty</p>
+            <p className="kicker">Loyalty</p>
             <h2 className="mt-3 font-heading text-4xl font-black uppercase tracking-tight md:text-5xl">Unlock The Brew Ladder</h2>
           </div>
 
@@ -335,7 +338,7 @@ function App() {
                 key={badge.name}
                 className={`flex items-center justify-between rounded-2xl border p-5 ${
                   badge.unlocked
-                    ? 'border-border bg-white/70'
+                    ? 'border-border bg-white/84'
                     : 'border-border/80 bg-transparent text-muted'
                 }`}
               >
@@ -352,7 +355,7 @@ function App() {
         <section id="contact" className="overflow-hidden rounded-[2rem] border border-foreground/15 bg-foreground px-6 py-10 text-background md:px-10 md:py-14">
           <div className="grid gap-12 md:grid-cols-[1.2fr_1fr]">
             <div>
-              <p className="text-sm uppercase tracking-[0.24em] text-background/70">Contact Brewtopia</p>
+              <p className="kicker !text-background/70 before:!bg-background/45">Contact Brewtopia</p>
               <h2 className="mt-4 font-heading text-[clamp(2rem,5vw,4rem)] font-black uppercase leading-[0.9]">
                 Let&apos;s Build
                 <br />

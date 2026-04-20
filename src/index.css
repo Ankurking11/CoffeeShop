@@ -5,11 +5,12 @@
 @tailwind utilities;
 
 :root {
-  --background: #faf9f6;
-  --foreground: hsl(0, 0%, 6%);
-  --primary: hsl(15, 90%, 58%);
-  --muted: hsl(0, 0%, 44%);
-  --border: hsl(35, 15%, 90%);
+  --background: #f4efe6;
+  --foreground: #2d221b;
+  --primary: #b8653a;
+  --muted: #76665b;
+  --border: #e0d5c7;
+  --surface: #fbf7f0;
   --carousel-total-width: 0px;
   --carousel-duration: 21s;
 }
@@ -25,7 +26,15 @@ html {
 body {
   margin: 0;
   background: var(--background);
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.45), rgba(250, 249, 246, 0.9));
+  background-image:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.38), rgba(244, 239, 230, 0.92)),
+    repeating-linear-gradient(
+      0deg,
+      rgba(173, 147, 124, 0.035) 0px,
+      rgba(173, 147, 124, 0.035) 1px,
+      transparent 1px,
+      transparent 4px
+    );
   color: var(--foreground);
   font-family: 'Inter', sans-serif;
   text-rendering: optimizeLegibility;
@@ -92,9 +101,44 @@ textarea:focus {
 }
 
 .paper-lines {
-  background-image:
-    linear-gradient(to right, rgba(211, 204, 193, 0.2) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(211, 204, 193, 0.12) 1px, transparent 1px);
-  background-size: 120px 120px;
+  position: relative;
+}
+
+.paper-lines::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    rgba(160, 133, 110, 0.06) 10%,
+    rgba(160, 133, 110, 0.06) 90%,
+    transparent
+  );
+  mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--muted);
+}
+
+.kicker::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: rgba(45, 34, 27, 0.38);
+}
+
+.cafe-surface {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 40px rgba(72, 50, 36, 0.06);
 }
 
